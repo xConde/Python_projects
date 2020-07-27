@@ -14,7 +14,7 @@ redirect = "127.0.0.1"
 website_list = ["www.discord.com", "discord.com", "www.reddit.com", "reddit.com"]
 
 while True:
-    if dt(dt.now().year, dt.now().month, dt.now().day, 6) < dt.now() < dt(dt.now().year, dt.now().month, dt.now().day, 17):
+    if dt(dt.now().year, dt.now().month, dt.now().day, 7) < dt.now() < dt(dt.now().year, dt.now().month, dt.now().day, 15):
         print("Focus on work.")
         with open(hosts_path, 'r+') as file:
             content = file.read()
@@ -26,9 +26,10 @@ while True:
     else:
         with open(hosts_path, 'r+') as file:
             content = file.readlines()
+            file.seek(0)
             for line in content:
                 if not any(website in line for website in website_list):
                     file.write(line)
             file.truncate()
         print("Time to relax.")
-    time.sleep(10)
+    time.sleep(180)
