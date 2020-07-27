@@ -1,6 +1,15 @@
 import json
 from difflib import get_close_matches
 
+"""
+Dictionary_JSON: define.py, dictonary.json
+
+Loads a JSON to find a definition for a users word. If the user slightly mistypes the word or is close 
+it will try to identify the next best thing by using an imported library get_close_matches. 
+ 
+"""
+
+
 data = json.load(open("dictonary.json"))
 
 
