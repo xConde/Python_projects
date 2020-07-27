@@ -30,4 +30,4 @@ while True:
                 ctypes.windll.user32.MessageBoxW(0, 'Get back to work!', 'Alert!', 0)
     else:
         print("Time to relax.")
-    time.sleep(10)
+    time.sleep(180)
