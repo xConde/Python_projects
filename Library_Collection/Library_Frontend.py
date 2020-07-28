@@ -1,5 +1,14 @@
 from tkinter import *
 from Library_Collection import Library_Backend
+import time
+
+"""
+Library_Collection: Library_Frontend.py : library.db
+Shows an interactive library interface in which the user can modify the library
+database and maintain records in library.db. Library_Frontend.py creates the GUI in
+tkinter and creates functionality for buttons. 
+
+"""
 
 
 def get_selected_row(event):
@@ -29,24 +38,31 @@ def search_command():
 
 
 def add_command():
+    list1.delete(0, END)
     if title_text.get() and author_text.get() and year_text.get() and isbn_text.get():
         Library_Backend.insertToDB(title_text.get(), author_text.get(), year_text.get(), isbn_text.get())
-        list1.delete(0, END)
-        list1.insert(END, (title_text.get(), author_text.get(), year_text.get(), isbn_text.get()))
+        time.sleep(.2)
+        view_command()
     else:
         list1.insert(END, "Please enter all fields")
 
 
 def update_command():
-    Library_Backend.updateToDB(selected_tuple[0], title_text.get(), author_text.get(), year_text.get(),
-                               isbn_text.get())
+    if title_text.get() and author_text.get() and year_text.get() and isbn_text.get():
+        Library_Backend.updateToDB(selected_tuple[0], title_text.get(), author_text.get(), year_text.get(),
+                                   isbn_text.get())
+        time.sleep(.2)
+        view_command()
 
 
 def delete_command():
     Library_Backend.deleteFromDB(selected_tuple[0])
+    time.sleep(1.5)
+    view_command()
 
 
 window = Tk()
+
 
 window.wm_title("Library Database")
 
@@ -78,7 +94,7 @@ isbn_text = StringVar()
 e4 = Entry(window, textvariable=isbn_text)
 e4.grid(row=1, column=3)
 
-list1 = Listbox(window, height=6, width=35)
+list1 = Listbox(window, height=7, width=70)
 list1.grid(row=2, column=0, rowspan=6, columnspan=2)
 
 sb1 = Scrollbar(window)
@@ -104,8 +120,6 @@ b4.grid(row=5, column=3)
 b5 = Button(window, text="Delete selected", width=12, command=delete_command)
 b5.grid(row=6, column=3)
 
-b6 = Button(window, text="Close", width=12, command=window.destroy)
-b6.grid(row=7, column=3)
 
 view_command()
 window.mainloop()

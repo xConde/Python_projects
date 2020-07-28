@@ -1,5 +1,13 @@
 import sqlite3
 
+"""
+Library_Collection: Library_Frontend.py : library.db
+Shows an interactive library interface in which the user can modify the library
+database and maintain records in library.db. Library_Backend.py creates and maintains 
+a connection with library.db using sqlite3.
+
+"""
+
 
 def connectToDB():
     conn = sqlite3.connect("library.db")
