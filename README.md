@@ -17,4 +17,5 @@ Stops user interaction during the period of 0600 to 1700 (6AM-5PM) to programs s
 to encourage productivity. Utilizes tasklist to check if a task that is blocked is running. Currently set to check every 10 seconds.
 
 ## Library_Collection
-#### model.py, view.py, controller.py
+#### Library_Frontend.py, Library_Backend.py : library.db
+Allows user to manage a library database through a GUI. User may modify records through adding, deleting, and updating. Library_Frontend.py utilizes tkinter to create GUI, while Library_Backend.py creates and manages the database through sqlite3. 
