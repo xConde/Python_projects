@@ -57,5 +57,3 @@ def deleteFromDB(id):
 
 
 connectToDB()
-
-print(viewFromDB())
