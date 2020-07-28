@@ -17,4 +17,4 @@ Stops user interaction during the period of 0600 to 1700 (6AM-5PM) to programs s
 to encourage productivity. Utilizes tasklist to check if a task that is blocked is running. Currently set to check every 10 seconds.
 
 ## Library_Collection
-#### script1.py
+#### model.py, view.py, controller.py
