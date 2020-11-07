@@ -3,7 +3,7 @@
 
 ## Dictionary_JSON 
 #### Define.py : dictionary.json
-Loads a JSON to find a definition for a users word. If the user slightly mistypes the word or is close 
+Loads a JSON to act as a dictionary. The user may request a definition for a word against the dictionary.json. If the user slightly mistypes the word or is close 
 it will try to identify the next best thing by using an imported library get_close_matches. 
 
 
